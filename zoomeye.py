@@ -63,8 +63,7 @@ class Zoomeye():
 				timeout=self._timeout, 
 				verify=False,
 				headers=self._headers,
-				allow_redirects=False,
-				proxies={'http': 'http://127.0.0.1:8080'})
+				allow_redirects=False)
 		except (requests.ConnectionError, requests.Timeout):
 			raise Zoomeye.ConnectionError('connect failed')
 		if res.status_code in (200, 201):
